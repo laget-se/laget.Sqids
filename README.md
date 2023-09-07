@@ -39,20 +39,20 @@ If you're targeting an older framework than .NET 7, SqidsEncoder only supports i
 
 ### Basic usage
 ```c#
-    var squid = Squid.FromInt(42);
-    var int = squid.ToInt();
+    var sqid = Sqid.FromInt(42);
+    var int = sqid.ToInt();
 ```
 
 ```c#
-    var squid = Squid.FromLong(42);
-    var int = squid.ToLong();
+    var sqid = Sqid.FromLong(42);
+    var int = sqid.ToLong();
 ```
 
 ### Usage in a class
 ```c#
     public class Dto 
     {
-        public Squid Id { get; set; }
+        public Sqid Id { get; set; }
     }
 
     // Serializes to { Id: "somehash" }
