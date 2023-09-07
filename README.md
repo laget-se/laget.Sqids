@@ -39,8 +39,13 @@ If you're targeting an older framework than .NET 7, SqidsEncoder only supports i
 
 ### Basic usage
 ```c#
-    var squid = Squid.FromLong(42);
+    var squid = Squid.FromInt(42);
     var int = squid.ToInt();
+```
+
+```c#
+    var squid = Squid.FromLong(42);
+    var int = squid.ToLong();
 ```
 
 ### Usage in a class
