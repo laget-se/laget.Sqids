@@ -32,6 +32,20 @@ namespace laget.Sqids.Utilities
             }
         }
 
+        public SqidFactory(SqidOptions options, HashSet<string> blockList)
+        {
+            foreach (var version in options.Alphabets)
+            {
+                _defaultAlphabetVersion = options.DefaultAlphabetVersion;
+                _encoders.Add(version.Key, new SqidsEncoder(new SqidsOptions
+                {
+                    Alphabet = options.DefaultAlphabet,
+                    MinLength = DefaultHashLength,
+                    BlockList = blockList
+                }));
+            }
+        }
+
         public string GetHash(int id)
         {
             if (!_encoders.TryGetValue(_defaultAlphabetVersion, out var encoder))
