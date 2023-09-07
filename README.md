@@ -1,4 +1,7 @@
 ﻿# laget.Sqids
+> **Note**
+> The IDs that Sqids generates are unique and always decode into the same numbers. You can also make them unique to your application (so that they're not the same as everyone else who uses Sqids) by providing a shuffled alphabet.
+
 Simple library for using hashed ids in DTOs
 
 Based on https://www.sqids.org/
