@@ -34,7 +34,10 @@ Salts for the hashes will be loaded from the config file expecting the following
     }
 }
 ```
-Where 'xx' is a 2 character version code and 'yyyy' is the alphabet (of unlimited size but must be larger than 5) used by that version
+Where 'xx' is a 2 character version code and 'yyyy' is the alphabet (of unlimited size but must be larger than 5) used by that version.
+
+> **Warning**
+> Sqids needs an alphabet that contains at least 5 unique characters.
 
 ## Usage
 > **Note**
