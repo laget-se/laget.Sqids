@@ -55,9 +55,9 @@ namespace laget.Sqids.Tests
             var sqid = Sqid.FromInt(id);
             var model = new StringModel { Value = (string)sqid };
 
-            Assert.Equal("0xKwAcVqIY5sSnA", sqid.ToString());
-            Assert.Equal("0xKwAcVqIY5sSnA", (string)sqid);
-            Assert.Equal("0xKwAcVqIY5sSnA", model.Value);
+            Assert.Equal("0x4OloBIN3OGzel", sqid.ToString());
+            Assert.Equal("0x4OloBIN3OGzel", (string)sqid);
+            Assert.Equal("0x4OloBIN3OGzel", model.Value);
         }
 
         [Fact]

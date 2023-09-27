@@ -20,20 +20,20 @@
         <dependency id="Microsoft.Extensions.Configuration.Abstractions" version="7.0.0" />
         <dependency id="Microsoft.Extensions.Configuration.Binder" version="7.0.4" />
         <dependency id="Newtonsoft.Json" version="13.0.3" />
-        <dependency id="Sqids" version="2.0.0" />
+        <dependency id="Sqids" version="3.0.3" />
       </group>
       <group targetFramework="netstandard2.1">
         <dependency id="Autofac.Extensions.DependencyInjection" version="8.0.0" />
         <dependency id="Microsoft.Extensions.Configuration.Abstractions" version="7.0.0" />
         <dependency id="Microsoft.Extensions.Configuration.Binder" version="7.0.4" />
         <dependency id="Newtonsoft.Json" version="13.0.3" />
-        <dependency id="Sqids" version="2.0.0" />
+        <dependency id="Sqids" version="3.0.3" />
       </group>
       <group targetFramework="netstandard2.0">
         <dependency id="Autofac.Extensions.DependencyInjection" version="8.0.0" />
         <dependency id="Microsoft.Extensions.Configuration.Abstractions" version="7.0.0" />
         <dependency id="Microsoft.Extensions.Configuration.Binder" version="7.0.4" />
-        <dependency id="Sqids" version="2.0.0" />
+        <dependency id="Sqids" version="3.0.3" />
       </group>
     </dependencies>
   </metadata>
