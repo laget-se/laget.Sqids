@@ -17,18 +17,31 @@ namespace laget.Sqids.Utilities
 
 
         private readonly string _defaultAlphabetVersion;
+
+#if NET7_0_OR_GREATER
+        private readonly Dictionary<string, SqidsEncoder<int>> _encoders = new();
+#else
         private readonly Dictionary<string, SqidsEncoder> _encoders = new Dictionary<string, SqidsEncoder>();
+#endif
 
         public SqidFactory(SqidOptions options)
         {
             foreach (var version in options.Alphabets)
             {
                 _defaultAlphabetVersion = options.DefaultAlphabetVersion;
+#if NET7_0_OR_GREATER
+                _encoders.Add(version.Key, new SqidsEncoder<int>(new SqidsOptions
+                {
+                    Alphabet = options.DefaultAlphabet,
+                    MinLength = DefaultHashLength
+                }));
+#else
                 _encoders.Add(version.Key, new SqidsEncoder(new SqidsOptions
                 {
                     Alphabet = options.DefaultAlphabet,
                     MinLength = DefaultHashLength
                 }));
+#endif
             }
         }
 
@@ -37,12 +50,21 @@ namespace laget.Sqids.Utilities
             foreach (var version in options.Alphabets)
             {
                 _defaultAlphabetVersion = options.DefaultAlphabetVersion;
+#if NET7_0_OR_GREATER
+                _encoders.Add(version.Key, new SqidsEncoder<int>(new SqidsOptions
+                {
+                    Alphabet = options.DefaultAlphabet,
+                    MinLength = DefaultHashLength,
+                    BlockList = blockList
+                }));
+#else
                 _encoders.Add(version.Key, new SqidsEncoder(new SqidsOptions
                 {
                     Alphabet = options.DefaultAlphabet,
                     MinLength = DefaultHashLength,
                     BlockList = blockList
                 }));
+#endif
             }
         }
 
