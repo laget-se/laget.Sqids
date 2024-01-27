@@ -31,7 +31,7 @@ namespace laget.Sqids.Utilities
                 _encoders.Add(version.Key, new SqidsEncoder<int>(new SqidsOptions
                 {
                     Alphabet = options.DefaultAlphabet,
-                    MinLength = DefaultHashLength
+                    MinLength = options.MinLength
                 }));
 #else
                 _encoders.Add(version.Key, new SqidsEncoder(new SqidsOptions
@@ -52,14 +52,14 @@ namespace laget.Sqids.Utilities
                 _encoders.Add(version.Key, new SqidsEncoder<int>(new SqidsOptions
                 {
                     Alphabet = options.DefaultAlphabet,
-                    MinLength = DefaultHashLength,
+                    MinLength = options.MinLength,
                     BlockList = blockList
                 }));
 #else
                 _encoders.Add(version.Key, new SqidsEncoder(new SqidsOptions
                 {
                     Alphabet = options.DefaultAlphabet,
-                    MinLength = DefaultHashLength,
+                    MinLength = options.MinLength,
                     BlockList = blockList
                 }));
 #endif
