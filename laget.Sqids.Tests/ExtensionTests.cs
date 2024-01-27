@@ -22,7 +22,7 @@ namespace laget.Sqids.Tests
             var id = 1;
             var sqid = id.ToSqid(AlphabetVersion1X);
 
-            var expected = "1x4OloBIN3OGzel";
+            var expected = "1xtFWBzWsugb4JO";
             Assert.Equal(expected, sqid.Hash);
         }
 
@@ -42,7 +42,7 @@ namespace laget.Sqids.Tests
             var id = (long)1;
             var sqid = id.ToSqid(AlphabetVersion1X);
 
-            var expected = "1x4OloBIN3OGzel";
+            var expected = "1xtFWBzWsugb4JO";
             Assert.Equal(expected, sqid.Hash);
         }
     }

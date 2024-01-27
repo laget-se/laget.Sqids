@@ -11,7 +11,6 @@ namespace laget.Sqids.Tests.Utilities
         public void ProperlyParsesConfig()
         {
             const string defaultAlphabetVersion = "a0";
-            const string defaultAlphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
             const string alphabetVersion2 = "1x";
 
@@ -29,7 +28,6 @@ namespace laget.Sqids.Tests.Utilities
                 .Build()
                 .Get<SqidOptions>();
 
-            Assert.Equal(defaultAlphabet, options.DefaultAlphabet);
             Assert.Equal(defaultAlphabetVersion, options.DefaultAlphabetVersion);
             Assert.Equal(version0XAlphabet, options.Alphabets[defaultAlphabetVersion]);
             Assert.Equal(version1XAlphabet, options.Alphabets[alphabetVersion2]);
@@ -48,7 +46,6 @@ namespace laget.Sqids.Tests.Utilities
 
             var config = new Dictionary<string, string>
             {
-                { "DefaultAlphabet", defaultAlphabet },
                 { "DefaultAlphabetVersion", defaultAlphabetVersion },
                 { $"Alphabets:{defaultAlphabetVersion}", version0XAlphabet },
                 { $"Alphabets:{alphabetVersion2}", version1XAlphabet }
@@ -59,7 +56,6 @@ namespace laget.Sqids.Tests.Utilities
                 .Build()
                 .Get<SqidOptions>();
 
-            Assert.Equal(defaultAlphabet, options.DefaultAlphabet);
             Assert.Equal(defaultAlphabetVersion, options.DefaultAlphabetVersion);
             Assert.Equal(version0XAlphabet, options.Alphabets[defaultAlphabetVersion]);
             Assert.Equal(version1XAlphabet, options.Alphabets[alphabetVersion2]);

@@ -17,13 +17,12 @@ namespace laget.Sqids.Tests.Abstractions
         {
             var options = new SqidOptions
             {
-                DefaultAlphabetVersion = AlphabetVersion0X,
-                DefaultAlphabet = Version0XAlphabet,
                 Alphabets = new Dictionary<string, string>
                 {
                     { AlphabetVersion0X, Version0XAlphabet },
                     { AlphabetVersion1X, Version1XAlphabet }
-                }
+                },
+                DefaultAlphabetVersion = AlphabetVersion0X
             };
             SqidFactory = new SqidFactory(options);
             Sqid.SetFactory(SqidFactory);

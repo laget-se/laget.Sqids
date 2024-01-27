@@ -30,13 +30,13 @@ namespace laget.Sqids.Utilities
 #if NET7_0_OR_GREATER
                 _encoders.Add(version.Key, new SqidsEncoder<int>(new SqidsOptions
                 {
-                    Alphabet = options.DefaultAlphabet,
+                    Alphabet = version.Value,
                     MinLength = options.MinLength
                 }));
 #else
                 _encoders.Add(version.Key, new SqidsEncoder(new SqidsOptions
                 {
-                    Alphabet = options.DefaultAlphabet,
+                    Alphabet = version.Value,
                     MinLength = options.MinLength
                 }));
 #endif
@@ -51,14 +51,14 @@ namespace laget.Sqids.Utilities
 #if NET7_0_OR_GREATER
                 _encoders.Add(version.Key, new SqidsEncoder<int>(new SqidsOptions
                 {
-                    Alphabet = options.DefaultAlphabet,
+                    Alphabet = version.Value,
                     MinLength = options.MinLength,
                     BlockList = blockList
                 }));
 #else
                 _encoders.Add(version.Key, new SqidsEncoder(new SqidsOptions
                 {
-                    Alphabet = options.DefaultAlphabet,
+                    Alphabet = version.Value,
                     MinLength = options.MinLength,
                     BlockList = blockList
                 }));

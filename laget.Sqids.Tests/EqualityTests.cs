@@ -48,5 +48,14 @@ namespace laget.Sqids.Tests
             Assert.False(sqid1 == sqid2);
             Assert.False(sqid2 == sqid1);
         }
+
+        [Fact]
+        public void SqidGeneratedWithDifferentAlphabetsShouldNotBeEqual()
+        {
+            var squid0x = Sqid.FromInt(1, AlphabetVersion0X);
+            var squid1x = Sqid.FromInt(1, AlphabetVersion1X);
+
+            Assert.NotEqual(squid1x, squid0x);
+        }
     }
 }
