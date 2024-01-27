@@ -1,8 +1,6 @@
 ﻿# laget.Sqids
 > **Note**
 > The IDs that Sqids generates are unique and always decode into the same numbers. You can also make them unique to your application (so that they're not the same as everyone else who uses Sqids) by providing a shuffled alphabet.
->
-> Default alphabet: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
 Simple library for using hashed ids in DTOs
 
@@ -27,10 +25,12 @@ Salts for the hashes will be loaded from the config file expecting the following
 {
     /* ..., */
     "Sqids": {
-        "DefaultAlphabetVersion": "xx",
         "Alphabets": {
-            "xx": "yyyy..."
-        ,
+            "x1": "1mQCPfDZ0cSKuITsAjWGpe3Rwltq4ghi8J9kVLX2oEOrNByHMUbFz5dY76nvxa",
+            "x2": "mBQtPx6evZfEV9TXsh1LGO2N8ScYaHJUbMdr7iCIuKp4jynD0WgAl5zwqkRo3F",
+            ...
+        },
+        "DefaultAlphabetVersion": "x1",
         "MinLength": 13
     }
     /* ... */
