@@ -30,7 +30,8 @@ Salts for the hashes will be loaded from the config file expecting the following
         "DefaultAlphabetVersion": "xx",
         "Alphabets": {
             "xx": "yyyy..."
-        }
+        ,
+        "MinLength": 13
     }
 }
 ```
