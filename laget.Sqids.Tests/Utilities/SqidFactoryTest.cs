@@ -37,7 +37,6 @@ namespace laget.Sqids.Tests.Utilities
         public void ProperlyParsesConfigWithOverrides()
         {
             const string defaultAlphabetVersion = "0x";
-            const string defaultAlphabet = "Yq0axCLFEi4noUb9dPI2Q5gJXkwjpfyMDVNAvBRKt73ruhSZl1TmsWOzHce6G8";
 
             const string alphabetVersion2 = "1x";
 

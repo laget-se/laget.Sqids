@@ -55,7 +55,10 @@ namespace laget.Sqids.Tests
             var squid0x = Sqid.FromInt(1, AlphabetVersion0X);
             var squid1x = Sqid.FromInt(1, AlphabetVersion1X);
 
-            Assert.NotEqual(squid1x, squid0x);
+            var hash0x = squid0x.Hash.Substring(2);
+            var hash1x = squid1x.Hash.Substring(2);
+
+            Assert.NotEqual(hash0x, hash1x);
         }
     }
 }
