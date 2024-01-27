@@ -59,6 +59,8 @@ namespace laget.Sqids.Tests
             var hash1x = squid1x.Hash.Substring(2);
 
             Assert.NotEqual(hash0x, hash1x);
+            Assert.Equal("4OloBIN3OGzel", hash0x);
+            Assert.Equal("tFWBzWsugb4JO", hash1x);
         }
     }
 }
