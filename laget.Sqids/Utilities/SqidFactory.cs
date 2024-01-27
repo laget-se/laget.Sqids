@@ -5,17 +5,15 @@ using System.Linq;
 
 namespace laget.Sqids.Utilities
 {
-    public interface ISquidFactory
+    public interface ISqidFactory
     {
         string GetHash(int id);
+        string GetHash(int id, string alphabet);
         int GetId(string hash);
     }
 
-    public class SqidFactory : ISquidFactory
+    public class SqidFactory : ISqidFactory
     {
-        private const int DefaultHashLength = 13;
-
-
         private readonly string _defaultAlphabetVersion;
 
 #if NET7_0_OR_GREATER
@@ -39,7 +37,7 @@ namespace laget.Sqids.Utilities
                 _encoders.Add(version.Key, new SqidsEncoder(new SqidsOptions
                 {
                     Alphabet = options.DefaultAlphabet,
-                    MinLength = DefaultHashLength
+                    MinLength = options.MinLength
                 }));
 #endif
             }
@@ -74,6 +72,14 @@ namespace laget.Sqids.Utilities
                 throw new SqidsInvalidVersionException(_defaultAlphabetVersion);
 
             return $"{_defaultAlphabetVersion}{encoder.Encode(id)}";
+        }
+
+        public string GetHash(int id, string alphabet)
+        {
+            if (!_encoders.TryGetValue(alphabet, out var encoder))
+                throw new SqidsInvalidVersionException(alphabet);
+
+            return $"{alphabet}{encoder.Encode(id)}";
         }
 
         public int GetId(string hash)

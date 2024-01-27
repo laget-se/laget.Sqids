@@ -7,9 +7,9 @@ namespace laget.Sqids.Serialization.Newtonsoft.Json
     {
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            if (value is Sqid squid)
+            if (value is Sqid sqid)
             {
-                serializer.Serialize(writer, squid.Hash);
+                serializer.Serialize(writer, sqid.Hash);
                 return;
             }
 

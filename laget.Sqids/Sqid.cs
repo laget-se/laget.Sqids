@@ -6,17 +6,17 @@ namespace laget.Sqids
     [Newtonsoft.Json.JsonConverter(typeof(Serialization.Newtonsoft.Json.SqidConverter))]
     public class Sqid
     {
-        #region SquidsFactory
-        private static ISquidFactory _squidFactory;
-        public static void SetFactory(ISquidFactory factory) => _squidFactory = factory;
+        #region SqidsFactory
+        private static ISqidFactory _sqidFactory;
+        public static void SetFactory(ISqidFactory factory) => _sqidFactory = factory;
 
-        private static ISquidFactory SquidFactory
+        private static ISqidFactory SqidFactory
         {
             get
             {
-                if (_squidFactory == null)
+                if (_sqidFactory == null)
                     throw new SqidsNotRegisteredException();
-                return _squidFactory;
+                return _sqidFactory;
             }
         }
         #endregion
@@ -28,27 +28,29 @@ namespace laget.Sqids
             Hash = hash;
         }
 
-        public long ToLong() => (long)SquidFactory.GetId(Hash);
-        public int ToInt() => (int)SquidFactory.GetId(Hash);
-        public static Sqid FromLong(long id) => new Sqid(SquidFactory.GetHash((int)id));
-        public static Sqid FromInt(int id) => new Sqid(SquidFactory.GetHash(id));
+        public long ToLong() => (long)SqidFactory.GetId(Hash);
+        public int ToInt() => (int)SqidFactory.GetId(Hash);
+        public static Sqid FromLong(long id) => new Sqid(SqidFactory.GetHash((int)id));
+        public static Sqid FromLong(long id, string alphabet) => new Sqid(SqidFactory.GetHash((int)id, alphabet));
+        public static Sqid FromInt(int id) => new Sqid(SqidFactory.GetHash(id));
+        public static Sqid FromInt(int id, string alphabet) => new Sqid(SqidFactory.GetHash(id, alphabet));
         public static Sqid FromString(string hash) => new Sqid(hash);
 
 
         #region Overrides & Operators
-        public static explicit operator long(Sqid hashId)
+        public static explicit operator long(Sqid sqid)
         {
-            return hashId.ToLong();
+            return sqid.ToLong();
         }
 
-        public static explicit operator int(Sqid hashId)
+        public static explicit operator int(Sqid sqid)
         {
-            return hashId.ToInt();
+            return sqid.ToInt();
         }
 
-        public static explicit operator string(Sqid hashId)
+        public static explicit operator string(Sqid sqid)
         {
-            return hashId.ToString();
+            return sqid.ToString();
         }
 
         public static explicit operator Sqid(string hash)

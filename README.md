@@ -48,12 +48,33 @@ If you're targeting an older framework than .NET 7, SqidsEncoder only supports i
 ### Basic usage
 ```c#
     var sqid = Sqid.FromInt(42);
-    var int = sqid.ToInt();
+    var id = sqid.ToInt();
 ```
 
 ```c#
     var sqid = Sqid.FromLong(42);
-    var int = sqid.ToLong();
+    var id = sqid.ToLong();
+```
+
+> If you have multiple alphabets you can specify what alphabet to use when converting an int or long to a Sqid.
+```c#
+    var sqid = Sqid.FromInt(42, "a2");
+    var id = sqid.ToInt();
+```
+
+#### Extensions
+```c#
+    var sqid = (int)1.ToSqid();
+    var sqid = (int)1.ToSqid("a2");
+    var sqid = (int?)1.ToSqid();
+    var sqid = (int?)1.ToSqid("a2");
+
+    var sqid = (long)1.ToSqid();
+    var sqid = (long)1.ToSqid("a2");
+    var sqid = (long?)1.ToSqid();
+    var sqid = (long?)1.ToSqid("a2");
+
+    var sqid = "0xR4reL0zL3Xgq8".ToSqid();
 ```
 
 ### Usage in a class

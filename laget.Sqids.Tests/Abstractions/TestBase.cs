@@ -11,7 +11,7 @@ namespace laget.Sqids.Tests.Abstractions
         protected const string Version1XAlphabet = "kafeJOLsDjwdFVT8G4RmSgtB7H9XWI3ZpolrhA15yizuNQcPCEqxMvn2b06YKU";
         protected const string AlphabetVersion2X = "2x";
 
-        protected readonly ISquidFactory SquidFactory;
+        protected readonly ISqidFactory SqidFactory;
 
         protected TestBase()
         {
@@ -25,8 +25,8 @@ namespace laget.Sqids.Tests.Abstractions
                     { AlphabetVersion1X, Version1XAlphabet }
                 }
             };
-            SquidFactory = new SqidFactory(options);
-            Sqid.SetFactory(SquidFactory);
+            SqidFactory = new SqidFactory(options);
+            Sqid.SetFactory(SqidFactory);
         }
     }
 }

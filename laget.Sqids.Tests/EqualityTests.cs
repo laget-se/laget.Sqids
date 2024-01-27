@@ -6,7 +6,7 @@ namespace laget.Sqids.Tests
     public class EqualityTests : TestBase
     {
         [Fact]
-        public void HashIdEqualHashId()
+        public void SqidEqualSqid()
         {
             const int id1 = 1;
             const int id2 = 2;
@@ -21,13 +21,13 @@ namespace laget.Sqids.Tests
         }
 
         [Fact]
-        public void HashIdNotEqualHashId()
+        public void SqidNotEqualSqid()
         {
-            const int hashId1 = 3;
-            const int hashId2 = 4;
+            const int id1 = 3;
+            const int id2 = 4;
 
-            var sqid1 = Sqid.FromInt(hashId1);
-            var sqid2 = Sqid.FromInt(hashId2);
+            var sqid1 = Sqid.FromInt(id1);
+            var sqid2 = Sqid.FromInt(id2);
 
             Assert.NotEqual(sqid1, sqid2);
             Assert.NotEqual(sqid2, sqid1);
@@ -38,12 +38,12 @@ namespace laget.Sqids.Tests
         }
 
         [Fact]
-        public void HashIdNotEqualNullableHash()
+        public void SqidNotEqualNullableHash()
         {
-            const int hashId2 = 4;
+            const int id2 = 4;
 
             Sqid sqid1 = null;
-            var sqid2 = Sqid.FromInt(hashId2);
+            var sqid2 = Sqid.FromInt(id2);
 
             Assert.False(sqid1 == sqid2);
             Assert.False(sqid2 == sqid1);
