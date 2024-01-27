@@ -33,6 +33,7 @@ Salts for the hashes will be loaded from the config file expecting the following
         ,
         "MinLength": 13
     }
+    /* ... */
 }
 ```
 Where 'xx' is a 2 character version code and 'yyyy' is the alphabet (of unlimited size but must be larger than 5) used by that version.
